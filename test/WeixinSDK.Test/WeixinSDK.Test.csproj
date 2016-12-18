@@ -56,16 +56,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\BaseApiTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestAppBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\src\Common\Common.csproj">
+      <Project>{6c3df461-2f2c-4ab9-912f-72de259d311e}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\WeixinSDK\WeixinSDK.csproj">
       <Project>{dc7af5f6-8d9f-46e6-bd49-3486426e4702}</Project>
       <Name>WeixinSDK</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Conf\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,7 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,15 +48,26 @@
     <Compile Include="..\..\..\common\globals\AuthorInfo.cs">
       <Link>Globals\AuthorInfo.cs</Link>
     </Compile>
+    <Compile Include="Api\BaseApi.cs" />
+    <Compile Include="Extension\AppBuilderExtension.cs" />
+    <Compile Include="Configuration\DevConfiguration.cs" />
+    <Compile Include="Configuration\DevConfigurationBuilder.cs" />
+    <Compile Include="TokenService\GeneralTokenService.cs" />
+    <Compile Include="TokenService\TokenServiceBase.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Globals\VersionInfo.cs" />
+    <Compile Include="Model\BaseApiModel\GetAccessTokenModel.cs" />
+    <Compile Include="Model\ResultModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TokenService\DebugTokenService.cs" />
+    <Compile Include="WeixinApp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api\" />
     <Folder Include="Core\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Globals\Wlitsoft.Framework.snk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\src\Common.Logger.Log4Net\Common.Logger.Log4Net.csproj">
