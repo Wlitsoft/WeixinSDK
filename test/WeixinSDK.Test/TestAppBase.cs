@@ -1,6 +1,8 @@
 ﻿using Wlitsoft.Framework.Common;
+using Wlitsoft.Framework.WeixinSDK;
 using Wlitsoft.Framework.WeixinSDK.Extension;
 using Wlitsoft.Framework.WeixinSDK.TokenService;
+using Xunit;
 
 namespace WeixinSDK.Test
 {
@@ -15,6 +17,12 @@ namespace WeixinSDK.Test
                 .SetWeixinLoggerName("WeixinSDK")
                 .SetWeixinDevConfigByAppSettings()
                 .SetTokenService(tokenService);
+        }
+
+        [Fact]
+        public void InitConfigTesst()
+        {
+            //WeixinApp.
         }
     }
 }

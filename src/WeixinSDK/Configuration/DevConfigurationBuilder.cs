@@ -27,8 +27,8 @@ namespace Wlitsoft.Framework.WeixinSDK.Configuration
         {
             return new DevConfiguration()
             {
-                AppID = ConfigurationManager.AppSettings["WeixinSDK.AppID"],
-                AppSecret = ConfigurationManager.AppSettings["WeixinSDK.AppSecret"]
+                AppID = ConfigurationManager.AppSettings["WeixinSDK.Dev.AppID"],
+                AppSecret = ConfigurationManager.AppSettings["WeixinSDK.Dev.AppSecret"]
             };
         }
 
