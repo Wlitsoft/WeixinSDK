@@ -66,6 +66,7 @@
     <Compile Include="Configuration\DevConfigurationBuilderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestAppBase.cs" />
+    <Compile Include="TokenService\GeneralTokenServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

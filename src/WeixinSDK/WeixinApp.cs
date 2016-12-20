@@ -40,7 +40,7 @@ namespace Wlitsoft.Framework.WeixinSDK
         /// <summary>
         /// 日志记录者。
         /// </summary>
-        public static ILog GetLogger()
+        internal static ILog GetLogger()
         {
             if (string.IsNullOrEmpty(LoggerName))
                 return new EmptyLogger();
@@ -52,6 +52,7 @@ namespace Wlitsoft.Framework.WeixinSDK
         /// </summary>
         static WeixinApp()
         {
+            //将json 序列化实现改成 JsonNet。
             App.Builder.AddSerializer(SerializeType.Json, new JsonNetJsonSerializer());
         }
     }

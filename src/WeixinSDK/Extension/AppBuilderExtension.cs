@@ -78,14 +78,14 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
 
         #endregion
 
-        #region 设置令牌服务
+        #region 设置微信令牌服务
 
         /// <summary>
-        /// 设置令牌服务。
+        /// 设置微信令牌服务。
         /// </summary>
         /// <param name="appBuilder">应用构造。</param>
         /// <param name="tokenService">令牌服务。</param>
-        public static AppBuilder SetTokenService(this AppBuilder appBuilder, TokenServiceBase tokenService)
+        public static AppBuilder SetWeixinTokenService(this AppBuilder appBuilder, TokenServiceBase tokenService)
         {
             #region 参数校验
 
