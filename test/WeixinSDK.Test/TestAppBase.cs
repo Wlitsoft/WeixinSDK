@@ -1,6 +1,7 @@
 ﻿using Wlitsoft.Framework.Common;
 using Wlitsoft.Framework.Common.Logger.Log4Net;
 using Wlitsoft.Framework.WeixinSDK;
+using Wlitsoft.Framework.WeixinSDK.Config.Extension;
 using Wlitsoft.Framework.WeixinSDK.Configuration;
 using Wlitsoft.Framework.WeixinSDK.Extension;
 using Wlitsoft.Framework.WeixinSDK.TokenService;

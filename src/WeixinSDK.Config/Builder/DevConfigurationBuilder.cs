@@ -11,8 +11,9 @@ using System.Configuration;
 using System.IO;
 using Wlitsoft.Framework.Common.Exception;
 using Wlitsoft.Framework.Common.Extension;
+using Wlitsoft.Framework.WeixinSDK.Configuration;
 
-namespace Wlitsoft.Framework.WeixinSDK.Configuration
+namespace Wlitsoft.Framework.WeixinSDK.Config.Builder
 {
     /// <summary>
     /// 开发配置构造者。

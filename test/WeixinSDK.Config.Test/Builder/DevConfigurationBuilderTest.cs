@@ -1,7 +1,8 @@
-﻿using Wlitsoft.Framework.WeixinSDK.Configuration;
+﻿using Wlitsoft.Framework.WeixinSDK.Config.Builder;
+using Wlitsoft.Framework.WeixinSDK.Configuration;
 using Xunit;
 
-namespace WeixinSDK.Test.Configuration
+namespace WeixinSDK.Config.Test.Builder
 {
     public class DevConfigurationBuilderTest
     {

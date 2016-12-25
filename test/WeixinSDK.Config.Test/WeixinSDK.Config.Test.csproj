@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0F275020-6F2E-446C-A947-F05FF51075B1}</ProjectGuid>
+    <ProjectGuid>{7B3E1908-0E5F-4B3B-B427-47105FE9A880}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeixinSDK.Test</RootNamespace>
-    <AssemblyName>WeixinSDK.Test</AssemblyName>
+    <RootNamespace>WeixinSDK.Config.Test</RootNamespace>
+    <AssemblyName>WeixinSDK.Config.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,12 +28,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Globals\Wlitsoft.Framework.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -62,29 +56,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\BaseApiTest.cs" />
-    <Compile Include="Api\TemplateMessageApiTest.cs" />
-    <Compile Include="Api\UserManagementApiTest.cs" />
+    <Compile Include="Builder\DevConfigurationBuilderTest.cs" />
+    <Compile Include="Builder\MessageProcessConfigurationBuilderTest.cs" />
+    <Compile Include="Fake\EventMessageProcessDemo01.cs" />
+    <Compile Include="Fake\MessageProcessDemo01.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestAppBase.cs" />
-    <Compile Include="TokenService\DebugTokenServiceTest.cs" />
-    <Compile Include="TokenService\GeneralTokenServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="Conf\log4net.conf">
+    <None Include="Conf\MessageProcessConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Conf\WeixinSDKDev.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Globals\Wlitsoft.Framework.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\src\Common.Logger.Log4Net\Common.Logger.Log4Net.csproj">
-      <Project>{D8786051-5C80-49D3-A8AF-9711DA5CD49E}</Project>
-      <Name>Common.Logger.Log4Net</Name>
+    <ProjectReference Include="..\..\..\Common\src\Common.Serializer.JsonNet\Common.Serializer.JsonNet.csproj">
+      <Project>{b57f3331-a875-40d2-8802-21104e28cc32}</Project>
+      <Name>Common.Serializer.JsonNet</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Common\src\Common\Common.csproj">
       <Project>{6c3df461-2f2c-4ab9-912f-72de259d311e}</Project>
@@ -98,9 +85,6 @@
       <Project>{dc7af5f6-8d9f-46e6-bd49-3486426e4702}</Project>
       <Name>WeixinSDK</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

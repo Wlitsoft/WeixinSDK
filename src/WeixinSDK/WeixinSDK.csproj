@@ -41,7 +41,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,10 +64,12 @@
     <Compile Include="Core\IRequestMessage.cs" />
     <Compile Include="Core\IRequestMessageEventKey.cs" />
     <Compile Include="Core\IResponseMessage.cs" />
+    <Compile Include="Core\RequestMsgEventType.cs" />
+    <Compile Include="Core\RequestMsgType.cs" />
+    <Compile Include="Core\ResponseMsgType.cs" />
     <Compile Include="Core\WeixinMessageProcessBase.cs" />
     <Compile Include="Extension\AppBuilderExtension.cs" />
     <Compile Include="Configuration\DevConfiguration.cs" />
-    <Compile Include="Configuration\DevConfigurationBuilder.cs" />
     <Compile Include="Model\OAuth2ApiModel\GetOAuthUserInfoResultModel.cs" />
     <Compile Include="Model\OAuth2ApiModel\OAuthAccessTokenResultModel.cs" />
     <Compile Include="Model\OAuth2ApiModel\OAuthScope.cs" />
