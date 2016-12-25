@@ -41,6 +41,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
 
             HttpReqeustClient client = new HttpReqeustClient();
             string responseResultString = client.HttpGetString(url);
+            WeixinApp.Logger.Debug($"Url:{url} Method:GET Response:{responseResultString}");
             return HttpResponseResultStringProcess<T>(responseResultString);
         }
 
@@ -80,6 +81,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
 
             HttpReqeustClient client = new HttpReqeustClient();
             string responseResultString = client.HttpPost(url, new StringContent(postData));
+            WeixinApp.Logger.Debug($"Url:{url} Method:POST Request:{postData} Response:{responseResultString}");
             return HttpResponseResultStringProcess<T>(responseResultString);
         }
 

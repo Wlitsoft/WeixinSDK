@@ -63,13 +63,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\BaseApiTest.cs" />
+    <Compile Include="Api\TemplateMessageApiTest.cs" />
+    <Compile Include="Api\UserManagementApiTest.cs" />
     <Compile Include="Configuration\DevConfigurationBuilderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestAppBase.cs" />
+    <Compile Include="TokenService\DebugTokenServiceTest.cs" />
     <Compile Include="TokenService\GeneralTokenServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Conf\log4net.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Conf\WeixinSDKDev.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -77,6 +83,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\src\Common.Logger.Log4Net\Common.Logger.Log4Net.csproj">
+      <Project>{D8786051-5C80-49D3-A8AF-9711DA5CD49E}</Project>
+      <Name>Common.Logger.Log4Net</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Common\src\Common\Common.csproj">
       <Project>{6c3df461-2f2c-4ab9-912f-72de259d311e}</Project>
       <Name>Common</Name>

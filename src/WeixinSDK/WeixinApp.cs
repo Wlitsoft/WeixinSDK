@@ -21,12 +21,6 @@ namespace Wlitsoft.Framework.WeixinSDK
     /// </summary>
     public class WeixinApp
     {
-
-        /// <summary>
-        /// 日志记录者名称。
-        /// </summary>
-        internal static string LoggerName;
-
         /// <summary>
         /// 开发配置。
         /// </summary>
@@ -40,12 +34,12 @@ namespace Wlitsoft.Framework.WeixinSDK
         /// <summary>
         /// 日志记录者。
         /// </summary>
-        internal static ILog GetLogger()
-        {
-            if (string.IsNullOrEmpty(LoggerName))
-                return new EmptyLogger();
-            return App.LoggerService.GetLogger(LoggerName);
-        }
+        internal static ILog Logger;
+
+        /// <summary>
+        /// 消息处理配置。
+        /// </summary>
+        internal static MessageProcessConfiguration MessageProcessConfig;
 
         /// <summary>
         /// 初始化 <see cref="WeixinApp"/> 类的静态实例。
@@ -54,6 +48,9 @@ namespace Wlitsoft.Framework.WeixinSDK
         {
             //将json 序列化实现改成 JsonNet。
             App.Builder.AddSerializer(SerializeType.Json, new JsonNetJsonSerializer());
+
+            //设置一个空的日子记录者。
+            Logger = new EmptyLogger();
         }
     }
 }

@@ -55,9 +55,28 @@
       <Link>Globals\AuthorInfo.cs</Link>
     </Compile>
     <Compile Include="Api\BaseApi.cs" />
+    <Compile Include="Api\OAuth2Api.cs" />
+    <Compile Include="Api\TemplateMessageApi.cs" />
+    <Compile Include="Api\UserManagementApi.cs" />
+    <Compile Include="Configuration\EventMessageConfiguration.cs" />
+    <Compile Include="Configuration\MessageConfiguration.cs" />
+    <Compile Include="Configuration\MessageConfigurationBase.cs" />
+    <Compile Include="Configuration\MessageProcessConfiguration.cs" />
+    <Compile Include="Core\IRequestMessage.cs" />
+    <Compile Include="Core\IRequestMessageEventKey.cs" />
+    <Compile Include="Core\IResponseMessage.cs" />
+    <Compile Include="Core\WeixinMessageProcessBase.cs" />
     <Compile Include="Extension\AppBuilderExtension.cs" />
     <Compile Include="Configuration\DevConfiguration.cs" />
     <Compile Include="Configuration\DevConfigurationBuilder.cs" />
+    <Compile Include="Model\OAuth2ApiModel\GetOAuthUserInfoResultModel.cs" />
+    <Compile Include="Model\OAuth2ApiModel\OAuthAccessTokenResultModel.cs" />
+    <Compile Include="Model\OAuth2ApiModel\OAuthScope.cs" />
+    <Compile Include="Model\TemplateMessageApiModel\SendTemplateMessageResultModel.cs" />
+    <Compile Include="Model\TemplateMessageApiModel\TemplateMessageParameterDataModel.cs" />
+    <Compile Include="Model\TemplateMessageApiModel\TemplateMessageParameterDictionary.cs" />
+    <Compile Include="Model\UserManagementApiModel\GetUserInfoResultModel.cs" />
+    <Compile Include="Model\UserManagementApiModel\GetUserInfosResultModel.cs" />
     <Compile Include="TokenService\GeneralTokenService.cs" />
     <Compile Include="TokenService\TokenServiceBase.cs" />
     <Compile Include="Extension\StringExtension.cs" />
@@ -68,9 +87,7 @@
     <Compile Include="TokenService\DebugTokenService.cs" />
     <Compile Include="WeixinApp.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Globals\Wlitsoft.Framework.snk" />
     <None Include="packages.config" />

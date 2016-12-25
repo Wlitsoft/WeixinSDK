@@ -20,27 +20,25 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
     public static class AppBuilderExtension
     {
 
-        #region 以项目配置文件 AppSettings 配置节点的方式设置 log4net 日志记录者
+        #region 设置微信开发配置
 
         /// <summary>
-        /// 以项目配置文件 AppSettings 配置节点的方式设置 log4net 日志记录者。
+        /// 以项目配置文件 AppSettings 配置节点的方式设置微信开发配置。
         /// </summary>
         /// <param name="appBuilder">应用构造。</param>
+        /// <returns>应用 构造 静态扩展。</returns>
         public static AppBuilder SetWeixinDevConfigByAppSettings(this AppBuilder appBuilder)
         {
-            WeixinApp.DevConfig = DevConfigurationBuilder.BuildByAppSettings();
+            appBuilder.SetWeixinDevConfig(DevConfigurationBuilder.BuildByAppSettings());
             return appBuilder;
         }
 
-        #endregion
-
-        #region 以 json 配置文件的方式设置 log4net 日志记录者
-
         /// <summary>
-        /// 以 json 配置文件的方式设置 log4net 日志记录者。
+        /// 以 json 配置文件的方式设置微信开发配置。
         /// </summary>
         /// <param name="appBuilder">应用构造。</param>
         /// <param name="configFilePath">配置文件路径。</param>
+        /// <returns>应用 构造 静态扩展。</returns>
         public static AppBuilder SetWeixinDevConfigByJsonFile(this AppBuilder appBuilder, string configFilePath)
         {
             #region 参数校验
@@ -50,20 +48,62 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
 
             #endregion
 
-            WeixinApp.DevConfig = DevConfigurationBuilder.BuildByJsonFile(configFilePath);
+            appBuilder.SetWeixinDevConfig(DevConfigurationBuilder.BuildByJsonFile(configFilePath));
+            return appBuilder;
+        }
+
+        /// <summary>
+        /// 设置微信开发配置 <see cref="DevConfiguration"/>。
+        /// </summary>
+        /// <param name="appBuilder">应用构造。</param>
+        /// <param name="config">一个 <see cref="DevConfiguration"/> 对象。</param>
+        /// <returns>应用 构造 静态扩展。</returns>
+        public static AppBuilder SetWeixinDevConfig(this AppBuilder appBuilder, DevConfiguration config)
+        {
+            #region 参数校验
+
+            if (config == null)
+                throw new ObjectNullException(nameof(config));
+
+            #endregion
+
+            WeixinApp.DevConfig = config;
             return appBuilder;
         }
 
         #endregion
 
-        #region 设置微信日志记录者名称
+        #region 设置微信消息处理配置
 
         /// <summary>
-        /// 设置微信日志记录者名称。
+        /// 设置微信消息处理配置 <see cref="MessageProcessConfiguration"/>。
+        /// </summary>
+        /// <param name="appBuilder">应用构造。</param>
+        /// <param name="config">一个 <see cref="MessageProcessConfiguration"/> 对象。</param>
+        /// <returns>应用 构造 静态扩展。</returns>
+        public static AppBuilder SetWeixinMessageConfig(this AppBuilder appBuilder, MessageProcessConfiguration config)
+        {
+            #region 参数校验
+
+            if (config == null)
+                throw new ObjectNullException(nameof(config));
+
+            #endregion
+
+            WeixinApp.MessageProcessConfig = config;
+            return appBuilder;
+        }
+
+        #endregion
+
+        #region 设置微信日志记录者
+
+        /// <summary>
+        /// 设置微信日志记录者。
         /// </summary>
         /// <param name="appBuilder">应用构造。</param>
         /// <param name="name">日志记录者名称。</param>
-        public static AppBuilder SetWeixinLoggerName(this AppBuilder appBuilder, string name)
+        public static AppBuilder SetWeixinLogger(this AppBuilder appBuilder, string name)
         {
             #region 参数校验
 
@@ -72,7 +112,9 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
 
             #endregion
 
-            WeixinApp.LoggerName = name;
+            //设置日志记录者。
+            WeixinApp.Logger = App.LoggerService.GetLogger(name);
+
             return appBuilder;
         }
 
@@ -99,6 +141,5 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
         }
 
         #endregion
-
     }
 }

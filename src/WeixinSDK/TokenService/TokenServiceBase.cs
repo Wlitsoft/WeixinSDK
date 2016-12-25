@@ -41,8 +41,14 @@ namespace Wlitsoft.Framework.WeixinSDK.TokenService
         {
             GetAccessTokenModel result = BaseApi.GetAccessToken();
             if (string.IsNullOrEmpty(result.ErrorMessage))
+            {
+                WeixinApp.Logger.Info($"TokenServiceBase_GetAccessToken: 当前 Token:{result.AccessToken}");
                 return result.AccessToken;
-            throw new Exception(string.Format("获取AccessToken失败，错误信息：{0}", result.ResponseResultString));
+            }
+
+            string errMsg = $"TokenServiceBase_GetAccessToken: 获取 Token 失败，错误信息：{result.ResponseResultString}";
+            WeixinApp.Logger.Fatal(errMsg);
+            throw new Exception(errMsg);
         }
 
         /// <summary>
