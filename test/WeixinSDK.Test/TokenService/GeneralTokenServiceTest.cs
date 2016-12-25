@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using Wlitsoft.Framework.Common;
+using Wlitsoft.Framework.WeixinSDK.Config.Extension;
 using Wlitsoft.Framework.WeixinSDK.Extension;
 using Wlitsoft.Framework.WeixinSDK.TokenService;
 using Xunit;

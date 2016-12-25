@@ -9,6 +9,7 @@
 
 using System;
 using Wlitsoft.Framework.WeixinSDK.Api;
+using Wlitsoft.Framework.WeixinSDK.Core;
 using Wlitsoft.Framework.WeixinSDK.Model.BaseApiModel;
 
 namespace Wlitsoft.Framework.WeixinSDK.TokenService
@@ -16,8 +17,10 @@ namespace Wlitsoft.Framework.WeixinSDK.TokenService
     /// <summary>
     /// 令牌服务基类。
     /// </summary>
-    public abstract class TokenServiceBase
+    public abstract class TokenServiceBase : ITokenService
     {
+        #region ITokenService 成员
+
         /// <summary>
         /// 获取令牌。
         /// <para>刷新令牌后，JSTickect会自动刷新。</para>
@@ -32,6 +35,8 @@ namespace Wlitsoft.Framework.WeixinSDK.TokenService
         /// <param name="isForceRefresh">是否强制刷新。</param>
         /// <returns>Js接口票证</returns>
         public abstract string GetJsTickect(bool isForceRefresh = false);
+
+        #endregion
 
         /// <summary>
         /// 基础接口 - 获取令牌。

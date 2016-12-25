@@ -18,13 +18,13 @@ namespace Wlitsoft.Framework.WeixinSDK.Configuration
         /// <summary>
         /// 获取或设置 微信消息处理对象。
         /// </summary>
-        public WeixinMessageProcessBase WeixinMessageProcess { get; set; }
+        public IWeixinMessageProcess WeixinMessageProcess { get; set; }
 
         /// <summary>
-        /// 初始化 <see cref="MessageConfigurationBase"/> 类的新实例。
+        /// 初始化 <see cref="IWeixinMessageProcess"/> 类的新实例。
         /// </summary>
         /// <param name="weixinMessageProcess">微信消息处理对象。</param>
-        public MessageConfigurationBase(WeixinMessageProcessBase weixinMessageProcess)
+        protected MessageConfigurationBase(IWeixinMessageProcess weixinMessageProcess)
         {
             this.WeixinMessageProcess = weixinMessageProcess;
         }

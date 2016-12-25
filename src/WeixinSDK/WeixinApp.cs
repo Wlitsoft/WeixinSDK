@@ -4,6 +4,7 @@
  * 
  * 变更历史：
  *      作者：李亮  时间：2016年12月18日	 新建
+ *      作者：李亮  时间：2016年12月25日     编辑 将 TokenServiceBase 改为 ITokenService 接口。
  * 
  *********************************************************************************************************************/
 
@@ -12,6 +13,7 @@ using Wlitsoft.Framework.Common.Core;
 using Wlitsoft.Framework.Common.Log;
 using Wlitsoft.Framework.Common.Serializer.JsonNet;
 using Wlitsoft.Framework.WeixinSDK.Configuration;
+using Wlitsoft.Framework.WeixinSDK.Core;
 using Wlitsoft.Framework.WeixinSDK.TokenService;
 
 namespace Wlitsoft.Framework.WeixinSDK
@@ -29,7 +31,7 @@ namespace Wlitsoft.Framework.WeixinSDK
         /// <summary>
         /// 令牌服务。
         /// </summary>
-        internal static TokenServiceBase TokenService;
+        internal static ITokenService TokenService;
 
         /// <summary>
         /// 日志记录者。

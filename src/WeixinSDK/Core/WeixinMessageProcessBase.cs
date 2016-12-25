@@ -11,17 +11,17 @@ namespace Wlitsoft.Framework.WeixinSDK.Core
     /// <summary>
     /// 微信消息处理基类。
     /// </summary>
-    public abstract class WeixinMessageProcessBase
+    public abstract class WeixinMessageProcessBase : IWeixinMessageProcess
     {
-        #region 公共属性
+        #region IWeixinMessageProcess 成员
 
         /// <summary>
-        /// 获取或设置 请求消息。
+        /// 设置 请求消息。
         /// </summary>
         public IRequestMessage RequestMessage { protected get; set; }
 
         /// <summary>
-        /// 获取或设置 响应消息。
+        /// 获取 相应消息。
         /// </summary>
         public IResponseMessage ResponseMessage { get; protected set; }
 
@@ -30,6 +30,11 @@ namespace Wlitsoft.Framework.WeixinSDK.Core
         /// <para>默认为 <c>false</c>，当消息处理逻辑不需要给发送方响应消息则将该属性设置为 <c>true</c>。</para>
         /// </summary>
         public bool IsResponseEmptyString { get; set; }
+
+        /// <summary>
+        /// 执行处理。
+        /// </summary>
+        public abstract void Process();
 
         #endregion
 
@@ -42,15 +47,6 @@ namespace Wlitsoft.Framework.WeixinSDK.Core
         {
 
         }
-
-        #endregion
-
-        #region 抽象方法
-
-        /// <summary>
-        /// 执行处理。
-        /// </summary>
-        public abstract void Process();
 
         #endregion
 

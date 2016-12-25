@@ -19,14 +19,14 @@ namespace Wlitsoft.Framework.WeixinSDK.Configuration
         /// <summary>
         /// 获取或设置 消息类型。
         /// </summary>
-        public string MsgType { get; set; }
+        public RequestMsgType MsgType { get; set; }
 
         /// <summary>
         /// 初始化 <see cref="MessageConfiguration"/> 类的新实例。
         /// </summary>
         /// <param name="msgType">消息类型。</param>
         /// <param name="weixinMessageProcess">微信消息处理对象。</param>
-        public MessageConfiguration(string msgType, WeixinMessageProcessBase weixinMessageProcess)
+        public MessageConfiguration(RequestMsgType msgType, IWeixinMessageProcess weixinMessageProcess)
             : base(weixinMessageProcess)
         {
             this.MsgType = msgType;

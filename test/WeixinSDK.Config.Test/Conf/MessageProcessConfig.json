@@ -1,0 +1,15 @@
+﻿{
+  "Messages": [
+    {
+      "MsgType": "Text",
+      "Type": "WeixinSDK.Config.Test.Fake.MessageProcessDemo01,WeixinSDK.Config.Test"
+    }
+  ],
+  "EventMessages": [
+    {
+      "EventType": "Subscribe",
+      "EventKey": "Key01",
+      "Type": "WeixinSDK.Config.Test.Fake.EventMessageProcessDemo01,WeixinSDK.Config.Test"
+    }
+  ]
+}
