@@ -1,22 +1,24 @@
-﻿using Wlitsoft.Framework.Common;
+﻿using WeixinSDK.Test.Fake;
+using Wlitsoft.Framework.Common;
 using Wlitsoft.Framework.Common.Logger.Log4Net;
 using Wlitsoft.Framework.WeixinSDK;
 using Wlitsoft.Framework.WeixinSDK.Config.Extension;
 using Wlitsoft.Framework.WeixinSDK.Configuration;
+using Wlitsoft.Framework.WeixinSDK.Core;
 using Wlitsoft.Framework.WeixinSDK.Extension;
 using Wlitsoft.Framework.WeixinSDK.TokenService;
 using Xunit;
 
 namespace WeixinSDK.Test
 {
-    public class TestAppBase
+    public class TestBase
     {
         /// <summary>
         /// 获取 测试 OpenId。
         /// </summary>
         public string TestOpenId => "ojYGMuO_gEKkFeb9csBPIdPFKqkM";
 
-        static TestAppBase()
+        static TestBase()
         {
             //设置日志。
             App.Builder.SetLog4NetLoggerByXmlConfig("./Conf/log4net.conf");
@@ -28,6 +30,14 @@ namespace WeixinSDK.Test
                 .SetWeixinLogger("WeixinSDKLog")
                 .SetWeixinDevConfigByAppSettings()
                 .SetWeixinTokenService(tokenService);
+
+            MessageProcessConfiguration pc = new MessageProcessConfiguration();
+            pc.MessageList.Add(new MessageConfiguration<RequestTextMessageProcessFake>(RequestMsgType.Text));
+
+            pc.EventMessageList.Add(new EventMessageConfiguration<RequestSubscribeEventMessageKey_001ProcessFake>(RequestMsgEventType.Subscribe));
+
+            App.Builder
+                .SetWeixinMessageConfig(pc);
 
             tokenService.Run();
         }

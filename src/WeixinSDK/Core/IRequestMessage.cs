@@ -31,6 +31,6 @@ namespace Wlitsoft.Framework.WeixinSDK.Core
         /// <summary>
         /// 获取 消息类型。
         /// </summary>
-        string MsgType { get; }
+        RequestMsgType MsgType { get; }
     }
 }

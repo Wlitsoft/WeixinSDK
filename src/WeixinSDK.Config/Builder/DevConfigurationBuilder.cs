@@ -7,6 +7,7 @@
  * 
  *********************************************************************************************************************/
 
+using System;
 using System.Configuration;
 using System.IO;
 using Wlitsoft.Framework.Common.Exception;
@@ -29,7 +30,10 @@ namespace Wlitsoft.Framework.WeixinSDK.Config.Builder
             return new DevConfiguration()
             {
                 AppID = ConfigurationManager.AppSettings["WeixinSDK.Dev.AppID"],
-                AppSecret = ConfigurationManager.AppSettings["WeixinSDK.Dev.AppSecret"]
+                AppSecret = ConfigurationManager.AppSettings["WeixinSDK.Dev.AppSecret"],
+                Token = ConfigurationManager.AppSettings["WeixinSDK.Dev.Token"],
+                EncodingAESKey = ConfigurationManager.AppSettings["WeixinSDK.Dev.EncodingAESKey"],
+                JSApiDebug = Convert.ToBoolean(ConfigurationManager.AppSettings["WeixinSDK.Dev.JSApiDebug"] ?? "false")
             };
         }
 

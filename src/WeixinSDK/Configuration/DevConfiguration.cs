@@ -23,5 +23,20 @@ namespace Wlitsoft.Framework.WeixinSDK.Configuration
         /// </summary>
         public string AppSecret { get; set; }
 
+        /// <summary>
+        /// 获取或设置 令牌。
+        /// </summary>
+        public string Token { get; set; }
+
+        /// <summary>
+        /// 获取或设置 消息加解密密钥。
+        /// </summary>
+        public string EncodingAESKey { get; set; }
+
+        /// <summary>
+        /// 获取或设置 JS接口调试开关。
+        /// </summary>
+        public bool JSApiDebug { get; set; }
+
     }
 }

@@ -4,7 +4,7 @@ using Xunit;
 
 namespace WeixinSDK.Test.Api
 {
-    public class BaseApiTest : TestAppBase
+    public class BaseApiTest : TestBase
     {
         [Fact]
         public void GetAccessTokenTest()

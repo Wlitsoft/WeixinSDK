@@ -53,8 +53,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Config.Builder
 
                     #endregion
 
-                    config.MessageList.Add(new MessageConfiguration(model.MsgType,
-                        (IWeixinMessageProcess)Activator.CreateInstance(model.Type)));
+                    config.MessageList.Add(new MessageConfiguration(model.MsgType, model.Type));
                 }
             }
 
@@ -69,8 +68,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Config.Builder
 
                     #endregion
 
-                    config.EventMessageList.Add(new EventMessageConfiguration(model.EventType,
-                        (IWeixinMessageProcess)Activator.CreateInstance(model.Type))
+                    config.EventMessageList.Add(new EventMessageConfiguration(model.EventType, model.Type)
                     { EventKey = model.EventKey });
                 }
             }

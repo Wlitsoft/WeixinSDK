@@ -65,8 +65,12 @@
     <Compile Include="Api\BaseApiTest.cs" />
     <Compile Include="Api\TemplateMessageApiTest.cs" />
     <Compile Include="Api\UserManagementApiTest.cs" />
+    <Compile Include="Fake\RequestSubscribeEventMessageKey_001ProcessFake.cs" />
+    <Compile Include="Fake\RequestTextMessageProcessFake.cs" />
+    <Compile Include="Message\Process\RequestMessageProcessTest.cs" />
+    <Compile Include="Message\Process\WeixinMessageHandlerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestAppBase.cs" />
+    <Compile Include="TestBase.cs" />
     <Compile Include="TokenService\DebugTokenServiceTest.cs" />
     <Compile Include="TokenService\GeneralTokenServiceTest.cs" />
   </ItemGroup>

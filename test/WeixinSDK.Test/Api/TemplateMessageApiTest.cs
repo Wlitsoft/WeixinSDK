@@ -5,7 +5,7 @@ using Xunit;
 
 namespace WeixinSDK.Test.Api
 {
-    public class TemplateMessageApiTest : TestAppBase
+    public class TemplateMessageApiTest : TestBase
     {
         [Fact]
         public void SendTemplateMessageTest()

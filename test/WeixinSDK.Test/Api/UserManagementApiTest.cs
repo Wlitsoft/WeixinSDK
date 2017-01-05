@@ -4,7 +4,7 @@ using Xunit;
 
 namespace WeixinSDK.Test.Api
 {
-    public class UserManagementApiTest : TestAppBase
+    public class UserManagementApiTest : TestBase
     {
         [Fact]
         public void GetUserInfoTest()

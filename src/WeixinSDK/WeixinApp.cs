@@ -53,6 +53,8 @@ namespace Wlitsoft.Framework.WeixinSDK
 
             //设置一个空的日子记录者。
             Logger = new EmptyLogger();
+
+            MessageProcessConfig = new MessageProcessConfiguration();
         }
     }
 }
