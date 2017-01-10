@@ -44,8 +44,8 @@ namespace Wlitsoft.Framework.WeixinSDK.TokenService
         /// <returns>令牌。</returns>
         protected string BaseApiGetAccessToken()
         {
-            GetAccessTokenModel result = BaseApi.GetAccessToken();
-            if (string.IsNullOrEmpty(result.ErrorMessage))
+            GetAccessTokenResultModel result = BaseApi.GetAccessToken();
+            if (result.ErrorCode == 0)
             {
                 WeixinApp.Logger.Info($"TokenServiceBase_GetAccessToken: 当前 Token:{result.AccessToken}");
                 return result.AccessToken;
@@ -61,9 +61,18 @@ namespace Wlitsoft.Framework.WeixinSDK.TokenService
         /// </summary>
         /// <param name="token">令牌。</param>
         /// <returns>js api 票证。</returns>
-        protected string JSApiGetTickect(string token)
+        protected string BaseApiGetTickect(string token)
         {
-            throw new NotImplementedException();
+            GetTickectResultModel result = BaseApi.GetTickect(token);
+            if (result.ErrorCode == 0)
+            {
+                WeixinApp.Logger.Info($"TokenServiceBase_GetTickect: 当前 Tickect:{result.Ticket}");
+                return result.Ticket;
+            }
+
+            string errMsg = $"TokenServiceBase_GetTickect: 获取 Tickect 失败，错误信息：{result.ResponseResultString}";
+            WeixinApp.Logger.Fatal(errMsg);
+            throw new Exception(errMsg);
         }
     }
 }

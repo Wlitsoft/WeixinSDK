@@ -53,7 +53,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Api
             #endregion
 
             string url = $"https://api.weixin.qq.com/sns/oauth2/access_token?appid={WeixinApp.DevConfig.AppID}&secret={WeixinApp.DevConfig.AppSecret}&code={code}&grant_type=authorization_code";
-            return url.GetJson<OAuthAccessTokenResultModel>();
+            return url.GetApiInvokeResult<OAuthAccessTokenResultModel>();
         }
 
         #endregion
@@ -83,7 +83,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Api
             #endregion
 
             string url = $"https://api.weixin.qq.com/sns/userinfo?access_token={accessToken}&openid={openId}&lang=zh_CN";
-            return url.GetJson<GetOAuthUserInfoResultModel>();
+            return url.GetApiInvokeResult<GetOAuthUserInfoResultModel>();
         }
 
         #endregion

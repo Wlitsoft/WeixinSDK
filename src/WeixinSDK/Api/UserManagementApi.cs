@@ -52,7 +52,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Api
             #endregion
 
             string url = $"https://api.weixin.qq.com/cgi-bin/user/info?access_token={WeixinApp.TokenService.GetToken()}&openid={openId}&lang={lang}";
-            return url.GetJson<GetUserInfoResultModel>();
+            return url.GetApiInvokeResult<GetUserInfoResultModel>();
         }
 
         #endregion
@@ -108,7 +108,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Api
 
             #endregion
 
-            return url.PostJson<GetUserInfosResultModel>(postdata);
+            return url.PostApiInvokeResult<GetUserInfosResultModel>(postdata);
         }
 
         #endregion

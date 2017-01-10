@@ -8,13 +8,13 @@
  * 
  *********************************************************************************************************************/
 
+using System.Security.Cryptography.X509Certificates;
 using Wlitsoft.Framework.Common;
 using Wlitsoft.Framework.Common.Core;
 using Wlitsoft.Framework.Common.Log;
 using Wlitsoft.Framework.Common.Serializer.JsonNet;
 using Wlitsoft.Framework.WeixinSDK.Configuration;
 using Wlitsoft.Framework.WeixinSDK.Core;
-using Wlitsoft.Framework.WeixinSDK.TokenService;
 
 namespace Wlitsoft.Framework.WeixinSDK
 {
@@ -42,6 +42,11 @@ namespace Wlitsoft.Framework.WeixinSDK
         /// 消息处理配置。
         /// </summary>
         internal static MessageProcessConfiguration MessageProcessConfig;
+
+        /// <summary>
+        /// 支付接口调用所使用的证书。
+        /// </summary>
+        internal static X509Certificate PayApiCertificate;
 
         /// <summary>
         /// 初始化 <see cref="WeixinApp"/> 类的静态实例。

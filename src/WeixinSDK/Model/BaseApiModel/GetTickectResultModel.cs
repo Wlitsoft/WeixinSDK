@@ -1,9 +1,9 @@
 ﻿/**********************************************************************************************************************
  * 描述：
- *      获取公众号令牌 结果模型。
+ *      获得令牌结果模型。
  * 
  * 变更历史：
- *      作者：李亮  时间：2016年12月18日	 新建
+ *      作者：李亮  时间：2017年01月07日	 新建
  * 
  *********************************************************************************************************************/
 using Newtonsoft.Json;
@@ -11,15 +11,15 @@ using Newtonsoft.Json;
 namespace Wlitsoft.Framework.WeixinSDK.Model.BaseApiModel
 {
     /// <summary>
-    /// 获取公众号令牌 结果模型。
+    /// 获得令牌结果模型。
     /// </summary>
-    public class GetAccessTokenModel : ResultModelBase
+    public class GetTickectResultModel : ResultModelBase
     {
         /// <summary>
-        /// 获取或设置 凭证。
+        /// 获取或设置 票证。
         /// </summary>
-        [JsonProperty("access_token")]
-        public string AccessToken { get; set; }
+        [JsonProperty("ticket")]
+        public string Ticket { get; set; }
 
         /// <summary>
         /// 获取或设置 凭证有效时间，单位：秒。

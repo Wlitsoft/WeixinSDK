@@ -21,12 +21,18 @@ namespace WeixinSDK.Test.TokenService
             Assert.True(tokenService.RunStatus);
 
             string token = tokenService.GetToken();
+            string tickect = tokenService.GetJsTickect();
+
             Assert.True(token.Length > 0);
+            Assert.True(tickect.Length > 0);
 
             Thread.Sleep(3000);
 
             string token2 = tokenService.GetToken();
+            string tickect2 = tokenService.GetJsTickect();
+
             Assert.True(token2.Length > 0);
+            Assert.True(tickect2.Length > 0);
         }
     }
 }

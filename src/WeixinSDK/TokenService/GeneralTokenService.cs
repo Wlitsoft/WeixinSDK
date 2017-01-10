@@ -185,7 +185,7 @@ namespace Wlitsoft.Framework.WeixinSDK.TokenService
                 throw new Exception("请先调用 Run 方法。");
 
             this.LastRunDate = DateTime.Now;
-            this._jsTickect = base.JSApiGetTickect(this._token);
+            this._jsTickect = base.BaseApiGetTickect(this._token);
         }
 
         #endregion

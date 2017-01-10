@@ -55,12 +55,14 @@
     </Compile>
     <Compile Include="Api\BaseApi.cs" />
     <Compile Include="Api\OAuth2Api.cs" />
+    <Compile Include="Api\PayApi.cs" />
     <Compile Include="Api\TemplateMessageApi.cs" />
     <Compile Include="Api\UserManagementApi.cs" />
     <Compile Include="Configuration\EventMessageConfiguration.cs" />
     <Compile Include="Configuration\MessageConfiguration.cs" />
     <Compile Include="Configuration\MessageConfigurationBase.cs" />
     <Compile Include="Configuration\MessageProcessConfiguration.cs" />
+    <Compile Include="Configuration\PayConfiguration.cs" />
     <Compile Include="Core\IRequestMessage.cs" />
     <Compile Include="Core\IRequestMessageEventKey.cs" />
     <Compile Include="Core\IResponseMessage.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Core\WeixinMessageProcessBase.cs" />
     <Compile Include="Extension\AppBuilderExtension.cs" />
     <Compile Include="Configuration\DevConfiguration.cs" />
+    <Compile Include="Extension\HttpReqeustClientEx.cs" />
     <Compile Include="Message\Process\HttpRequestParams.cs" />
     <Compile Include="Message\Process\RequestMessageProcess.cs" />
     <Compile Include="Message\Process\ResponseMessageProcess.cs" />
@@ -116,9 +119,18 @@
     <Compile Include="Message\Security\Crypto\DictionarySort.cs" />
     <Compile Include="Message\Security\Crypto\WeixinMsgCrypto.cs" />
     <Compile Include="Message\Security\Crypto\WeixinMsgCryptoErrorCode.cs" />
+    <Compile Include="Model\BaseApiModel\GetTickectResultModel.cs" />
+    <Compile Include="Model\PayModel\CloseOrderResultModel.cs" />
+    <Compile Include="Model\PayModel\OrderQueryResultModel.cs" />
+    <Compile Include="Model\PayModel\PayResultModelBase.cs" />
     <Compile Include="Model\OAuth2ApiModel\GetOAuthUserInfoResultModel.cs" />
     <Compile Include="Model\OAuth2ApiModel\OAuthAccessTokenResultModel.cs" />
     <Compile Include="Model\OAuth2ApiModel\OAuthScope.cs" />
+    <Compile Include="Model\PayModel\PayResultNotifyResultModel.cs" />
+    <Compile Include="Model\PayModel\RefundQueryResultModel.cs" />
+    <Compile Include="Model\PayModel\RefundResultModel.cs" />
+    <Compile Include="Model\PayModel\TradeType.cs" />
+    <Compile Include="Model\PayModel\UnifiedOrderResultModel.cs" />
     <Compile Include="Model\TemplateMessageApiModel\SendTemplateMessageResultModel.cs" />
     <Compile Include="Model\TemplateMessageApiModel\TemplateMessageParameterDataModel.cs" />
     <Compile Include="Model\TemplateMessageApiModel\TemplateMessageParameterDictionary.cs" />
@@ -128,7 +140,7 @@
     <Compile Include="TokenService\TokenServiceBase.cs" />
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Globals\VersionInfo.cs" />
-    <Compile Include="Model\BaseApiModel\GetAccessTokenModel.cs" />
+    <Compile Include="Model\BaseApiModel\GetAccessTokenResultModel.cs" />
     <Compile Include="Model\ResultModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TokenService\DebugTokenService.cs" />

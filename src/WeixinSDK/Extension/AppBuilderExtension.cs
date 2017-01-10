@@ -4,14 +4,13 @@
  * 
  * 变更历史：
  *      作者：李亮  时间：2016年12月18日	 新建
- * 
+ *      作者：李亮  时间：2017年01月07日	 编辑 添加 “设置支付接口调用所使用的证书” 方法。
  *********************************************************************************************************************/
-
+using System.Security.Cryptography.X509Certificates;
 using Wlitsoft.Framework.Common;
 using Wlitsoft.Framework.Common.Exception;
 using Wlitsoft.Framework.WeixinSDK.Configuration;
 using Wlitsoft.Framework.WeixinSDK.Core;
-using Wlitsoft.Framework.WeixinSDK.TokenService;
 
 namespace Wlitsoft.Framework.WeixinSDK.Extension
 {
@@ -20,7 +19,6 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
     /// </summary>
     public static class AppBuilderExtension
     {
-
         #region 设置微信开发配置
 
         /// <summary>
@@ -108,6 +106,57 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
             #endregion
 
             WeixinApp.TokenService = tokenService;
+            return appBuilder;
+        }
+
+        #endregion
+
+        #region 设置支付接口调用所使用的证书
+
+        /// <summary>
+        /// 设置支付接口调用所使用的证书。
+        /// </summary>
+        /// <param name="appBuilder">应用构造。</param>
+        /// <param name="certStoreLocation">证书存储区的位置。</param>
+        /// <param name="certStoreName">证书存储区的名称。</param>
+        /// <param name="certSubjectName">证书的主题名称。</param>
+        /// <returns>应用构造。</returns>
+        public static AppBuilder SetPayApiCertificate(this AppBuilder appBuilder, StoreLocation certStoreLocation, StoreName certStoreName, string certSubjectName)
+        {
+            #region 参数校验
+
+            if (string.IsNullOrEmpty(certSubjectName))
+                throw new StringNullOrEmptyException(nameof(certSubjectName));
+
+            #endregion
+
+            X509Store store = new X509Store(certStoreName, certStoreLocation);
+            store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+
+            X509Certificate2Collection certs = store.Certificates.Find(X509FindType.FindBySubjectName, certSubjectName, false);
+            if (certs.Count == 0)
+                throw new System.Exception($"未找到指定的证书：certSubjectName:“{certSubjectName}”");
+
+            appBuilder.SetPayApiCertificate(certs[0]);
+            return appBuilder;
+        }
+
+        /// <summary>
+        /// 设置支付接口调用所使用的证书。
+        /// </summary>
+        /// <param name="appBuilder">应用构造。</param>
+        /// <param name="certificate">证书。</param>
+        /// <returns>应用构造。</returns>
+        public static AppBuilder SetPayApiCertificate(this AppBuilder appBuilder, X509Certificate certificate)
+        {
+            #region 参数校验
+
+            if (certificate == null)
+                throw new ObjectNullException(nameof(certificate));
+
+            #endregion
+
+            WeixinApp.PayApiCertificate = certificate;
             return appBuilder;
         }
 

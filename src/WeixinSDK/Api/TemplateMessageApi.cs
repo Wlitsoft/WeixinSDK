@@ -65,7 +65,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Api
 
             #endregion
 
-            return url.PostJson<SendTemplateMessageResultModel>(postdata);
+            return url.PostApiInvokeResult<SendTemplateMessageResultModel>(postdata);
         }
 
         #endregion

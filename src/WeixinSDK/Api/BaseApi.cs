@@ -17,14 +17,33 @@ namespace Wlitsoft.Framework.WeixinSDK.Api
     /// </summary>
     public static class BaseApi
     {
+        #region 获取AccessToken
+
         /// <summary>
         /// 获取AccessToken。
         /// </summary>
         /// <returns>令牌字符串。</returns>
-        public static GetAccessTokenModel GetAccessToken()
+        public static GetAccessTokenResultModel GetAccessToken()
         {
             string url = $"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={WeixinApp.DevConfig.AppID}&secret={WeixinApp.DevConfig.AppSecret}";
-            return url.GetJson<GetAccessTokenModel>();
+            return url.GetApiInvokeResult<GetAccessTokenResultModel>();
         }
+
+        #endregion
+
+        #region 获取jsapi_ticket
+
+        /// <summary>
+        /// 获取jsapi_ticket。
+        /// </summary>
+        /// <param name="accessToken">公众号令牌，由 <see cref="BaseApi.GetAccessToken()"/> 获取。</param>
+        /// <returns>js接口票证。</returns>
+        public static GetTickectResultModel GetTickect(string accessToken)
+        {
+            string url = $"https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token={accessToken}&type=jsapi";
+            return url.GetApiInvokeResult<GetTickectResultModel>();
+        }
+
+        #endregion
     }
 }

@@ -4,7 +4,7 @@
  * 
  * 变更历史：
  *      作者：李亮  时间：2016年12月18日	 新建
- * 
+ *      作者：李亮  时间：2017年01月07日	 编辑 添加 PayConfig 相关代码。
  *********************************************************************************************************************/
 
 using System;
@@ -33,7 +33,12 @@ namespace Wlitsoft.Framework.WeixinSDK.Config.Builder
                 AppSecret = ConfigurationManager.AppSettings["WeixinSDK.Dev.AppSecret"],
                 Token = ConfigurationManager.AppSettings["WeixinSDK.Dev.Token"],
                 EncodingAESKey = ConfigurationManager.AppSettings["WeixinSDK.Dev.EncodingAESKey"],
-                JSApiDebug = Convert.ToBoolean(ConfigurationManager.AppSettings["WeixinSDK.Dev.JSApiDebug"] ?? "false")
+                JSApiDebug = Convert.ToBoolean(ConfigurationManager.AppSettings["WeixinSDK.Dev.JSApiDebug"] ?? "false"),
+                PayConfig = new PayConfiguration()
+                {
+                    MchId = ConfigurationManager.AppSettings["WeixinSDK.Dev.Pay.MchId"],
+                    PartnerKey = ConfigurationManager.AppSettings["WeixinSDK.Dev.Pay.PartnerKey"]
+                }
             };
         }
 
