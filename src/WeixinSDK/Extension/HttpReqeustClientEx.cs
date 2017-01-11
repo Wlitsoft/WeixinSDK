@@ -78,8 +78,7 @@ namespace Wlitsoft.Framework.WeixinSDK.Extension
             #endregion
 
             //获取参数签名。
-            ParamsSigner signer = new ParamsSigner(WeixinApp.DevConfig.PayConfig.PartnerKey);
-            string sign = signer.GetSign();
+            string sign = ParamsSignerEx.GetSign(postData);
 
             //组织提交数据。
             StringBuilder postDataSb = new StringBuilder();

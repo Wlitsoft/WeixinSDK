@@ -65,6 +65,7 @@
     <Compile Include="Api\BaseApiTest.cs" />
     <Compile Include="Api\TemplateMessageApiTest.cs" />
     <Compile Include="Api\UserManagementApiTest.cs" />
+    <Compile Include="Extension\ParamsSignerExTest.cs" />
     <Compile Include="Fake\RequestSubscribeEventMessageKey_001ProcessFake.cs" />
     <Compile Include="Fake\RequestTextMessageProcessFake.cs" />
     <Compile Include="Message\Process\RequestMessageProcessTest.cs" />

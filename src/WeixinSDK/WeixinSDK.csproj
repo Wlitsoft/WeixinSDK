@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,7 @@
       <Link>Globals\AuthorInfo.cs</Link>
     </Compile>
     <Compile Include="Api\BaseApi.cs" />
+    <Compile Include="Api\MchPayApi.cs" />
     <Compile Include="Api\OAuth2Api.cs" />
     <Compile Include="Api\PayApi.cs" />
     <Compile Include="Api\TemplateMessageApi.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Extension\AppBuilderExtension.cs" />
     <Compile Include="Configuration\DevConfiguration.cs" />
     <Compile Include="Extension\HttpReqeustClientEx.cs" />
+    <Compile Include="Extension\ParamsSignerEx.cs" />
     <Compile Include="Message\Process\HttpRequestParams.cs" />
     <Compile Include="Message\Process\RequestMessageProcess.cs" />
     <Compile Include="Message\Process\ResponseMessageProcess.cs" />
@@ -120,22 +123,28 @@
     <Compile Include="Message\Security\Crypto\WeixinMsgCrypto.cs" />
     <Compile Include="Message\Security\Crypto\WeixinMsgCryptoErrorCode.cs" />
     <Compile Include="Model\BaseApiModel\GetTickectResultModel.cs" />
+    <Compile Include="Model\PayModel\CheckNameMode.cs" />
     <Compile Include="Model\PayModel\CloseOrderResultModel.cs" />
     <Compile Include="Model\PayModel\OrderQueryResultModel.cs" />
+    <Compile Include="Model\PayModel\PaymentResultModel.cs" />
     <Compile Include="Model\PayModel\PayResultModelBase.cs" />
     <Compile Include="Model\OAuth2ApiModel\GetOAuthUserInfoResultModel.cs" />
     <Compile Include="Model\OAuth2ApiModel\OAuthAccessTokenResultModel.cs" />
     <Compile Include="Model\OAuth2ApiModel\OAuthScope.cs" />
     <Compile Include="Model\PayModel\PayResultNotifyResultModel.cs" />
+    <Compile Include="Model\PayModel\QueryPaymentResultModel.cs" />
     <Compile Include="Model\PayModel\RefundQueryResultModel.cs" />
     <Compile Include="Model\PayModel\RefundResultModel.cs" />
     <Compile Include="Model\PayModel\TradeType.cs" />
     <Compile Include="Model\PayModel\UnifiedOrderResultModel.cs" />
+    <Compile Include="Model\PayModel\WxChooseWXPayModel.cs" />
     <Compile Include="Model\TemplateMessageApiModel\SendTemplateMessageResultModel.cs" />
     <Compile Include="Model\TemplateMessageApiModel\TemplateMessageParameterDataModel.cs" />
     <Compile Include="Model\TemplateMessageApiModel\TemplateMessageParameterDictionary.cs" />
     <Compile Include="Model\UserManagementApiModel\GetUserInfoResultModel.cs" />
     <Compile Include="Model\UserManagementApiModel\GetUserInfosResultModel.cs" />
+    <Compile Include="Pay\H5Pay.cs" />
+    <Compile Include="Pay\MPPay.cs" />
     <Compile Include="TokenService\GeneralTokenService.cs" />
     <Compile Include="TokenService\TokenServiceBase.cs" />
     <Compile Include="Extension\StringExtension.cs" />
