@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeixinSDK.Config", "src\Wei
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeixinSDK.Config.Test", "test\WeixinSDK.Config.Test\WeixinSDK.Config.Test.csproj", "{7B3E1908-0E5F-4B3B-B427-47105FE9A880}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Redis", "..\Caching\src\Caching.Redis\Caching.Redis.csproj", "{D0D67571-4130-4E42-866F-91F36806AB11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeixinSDK.TokenService.Distributed", "src\WeixinSDK.TokenService.Distributed\WeixinSDK.TokenService.Distributed.csproj", "{A4E648D2-E806-4AA9-850F-702FE55C975E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{7B3E1908-0E5F-4B3B-B427-47105FE9A880}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B3E1908-0E5F-4B3B-B427-47105FE9A880}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B3E1908-0E5F-4B3B-B427-47105FE9A880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D67571-4130-4E42-866F-91F36806AB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D67571-4130-4E42-866F-91F36806AB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D67571-4130-4E42-866F-91F36806AB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D67571-4130-4E42-866F-91F36806AB11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4E648D2-E806-4AA9-850F-702FE55C975E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4E648D2-E806-4AA9-850F-702FE55C975E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4E648D2-E806-4AA9-850F-702FE55C975E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4E648D2-E806-4AA9-850F-702FE55C975E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,5 +81,7 @@ Global
 		{0F275020-6F2E-446C-A947-F05FF51075B1} = {C0AF58DC-D0B8-41DE-8B23-BD9F0CCBE9DC}
 		{BE4484A0-978C-4ABF-9744-7C95F4686A6E} = {671C7F43-BAEE-4792-BB39-4C39A60453A6}
 		{7B3E1908-0E5F-4B3B-B427-47105FE9A880} = {C0AF58DC-D0B8-41DE-8B23-BD9F0CCBE9DC}
+		{D0D67571-4130-4E42-866F-91F36806AB11} = {F95D6B3C-FC04-42B4-B349-3DA82817B2AB}
+		{A4E648D2-E806-4AA9-850F-702FE55C975E} = {671C7F43-BAEE-4792-BB39-4C39A60453A6}
 	EndGlobalSection
 EndGlobal
