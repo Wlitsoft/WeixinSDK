@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Wlitsoft.Framework.WeixinSDK.TokenService.Distributed.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -45,6 +46,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Wlitsoft.Framework.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ed13d4e5ca3553f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Wlitsoft.Framework.Common.1.0.0\lib\net45\Wlitsoft.Framework.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\..\common\globals\AuthorInfo.cs">
@@ -56,10 +61,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\src\Common\Common.csproj">
-      <Project>{6c3df461-2f2c-4ab9-912f-72de259d311e}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WeixinSDK\WeixinSDK.csproj">
       <Project>{dc7af5f6-8d9f-46e6-bd49-3486426e4702}</Project>
       <Name>WeixinSDK</Name>
@@ -67,8 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Globals\Wlitsoft.Framework.snk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y $(ProjectDir)\bin\$(ConfigurationName)\$(TargetName).dll $(SolutionDir)\src\NuGet\$(ProjectName)\lib\net45\
+xcopy /y $(ProjectDir)\bin\$(ConfigurationName)\$(TargetName).xml $(SolutionDir)\src\NuGet\$(ProjectName)\lib\net45\
+
+$(SolutionDir)\.nuget\nuget.exe pack $(SolutionDir)\src\NuGet\$(ProjectName)\$(ProjectName).nuspec -OutputDirectory $(SolutionDir)\.nuget\Output</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

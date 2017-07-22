@@ -36,6 +36,14 @@
     <AssemblyOriginatorKeyFile>Globals\Wlitsoft.Framework.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +52,14 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Wlitsoft.Framework.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ed13d4e5ca3553f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Wlitsoft.Framework.Common.1.0.0\lib\net45\Wlitsoft.Framework.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Wlitsoft.Framework.Common.Logger.Log4Net, Version=1.0.3.0, Culture=neutral, PublicKeyToken=7ed13d4e5ca3553f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Wlitsoft.Framework.Common.Logger.Log4Net.1.0.3\lib\net45\Wlitsoft.Framework.Common.Logger.Log4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
       <Private>True</Private>
@@ -87,14 +103,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\src\Common.Logger.Log4Net\Common.Logger.Log4Net.csproj">
-      <Project>{D8786051-5C80-49D3-A8AF-9711DA5CD49E}</Project>
-      <Name>Common.Logger.Log4Net</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Common\src\Common\Common.csproj">
-      <Project>{6c3df461-2f2c-4ab9-912f-72de259d311e}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\WeixinSDK.Config\WeixinSDK.Config.csproj">
       <Project>{be4484a0-978c-4abf-9744-7c95f4686a6e}</Project>
       <Name>WeixinSDK.Config</Name>

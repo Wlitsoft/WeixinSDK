@@ -20,6 +20,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Wlitsoft.Framework.WeixinSDK.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -49,6 +52,14 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Wlitsoft.Framework.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ed13d4e5ca3553f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Wlitsoft.Framework.Common.1.0.0\lib\net45\Wlitsoft.Framework.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Wlitsoft.Framework.Common.Serializer.JsonNet, Version=1.0.3.0, Culture=neutral, PublicKeyToken=7ed13d4e5ca3553f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Wlitsoft.Framework.Common.Serializer.JsonNet.1.0.3\lib\net45\Wlitsoft.Framework.Common.Serializer.JsonNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\..\common\globals\AuthorInfo.cs">
@@ -160,21 +171,13 @@
     <None Include="Globals\Wlitsoft.Framework.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\src\Common.Logger.Log4Net\Common.Logger.Log4Net.csproj">
-      <Project>{d8786051-5c80-49d3-a8af-9711da5cd49e}</Project>
-      <Name>Common.Logger.Log4Net</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Common\src\Common.Serializer.JsonNet\Common.Serializer.JsonNet.csproj">
-      <Project>{b57f3331-a875-40d2-8802-21104e28cc32}</Project>
-      <Name>Common.Serializer.JsonNet</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Common\src\Common\Common.csproj">
-      <Project>{6c3df461-2f2c-4ab9-912f-72de259d311e}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y $(ProjectDir)\bin\$(ConfigurationName)\$(TargetName).dll $(SolutionDir)\src\NuGet\$(ProjectName)\lib\net45\
+xcopy /y $(ProjectDir)\bin\$(ConfigurationName)\$(TargetName).xml $(SolutionDir)\src\NuGet\$(ProjectName)\lib\net45\
+
+$(SolutionDir)\.nuget\nuget.exe pack $(SolutionDir)\src\NuGet\$(ProjectName)\$(ProjectName).nuspec -OutputDirectory $(SolutionDir)\.nuget\Output</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

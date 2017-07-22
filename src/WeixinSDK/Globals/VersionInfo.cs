@@ -18,6 +18,5 @@ using System.Reflection;
 // 方法是按如下所示使用“*”:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.2017.0218")]
-[assembly: AssemblyInformationalVersion("1.0.2017.0218-Beta")]
+[assembly: AssemblyVersion("1.0.0")]
+[assembly: AssemblyFileVersion("1.0.2017.0722")]

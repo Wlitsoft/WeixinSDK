@@ -7,14 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C0AF58DC-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{671C7F43-BAEE-4792-BB39-4C39A60453A6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_shareProjects", "_shareProjects", "{F95D6B3C-FC04-42B4-B349-3DA82817B2AB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\src\Common\Common.csproj", "{6C3DF461-2F2C-4AB9-912F-72DE259D311E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logger.Log4Net", "..\Common\src\Common.Logger.Log4Net\Common.Logger.Log4Net.csproj", "{D8786051-5C80-49D3-A8AF-9711DA5CD49E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Serializer.JsonNet", "..\Common\src\Common.Serializer.JsonNet\Common.Serializer.JsonNet.csproj", "{B57F3331-A875-40D2-8802-21104E28CC32}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeixinSDK", "src\WeixinSDK\WeixinSDK.csproj", "{DC7AF5F6-8D9F-46E6-BD49-3486426E4702}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeixinSDK.Test", "test\WeixinSDK.Test\WeixinSDK.Test.csproj", "{0F275020-6F2E-446C-A947-F05FF51075B1}"
@@ -23,9 +15,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeixinSDK.Config", "src\Wei
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeixinSDK.Config.Test", "test\WeixinSDK.Config.Test\WeixinSDK.Config.Test.csproj", "{7B3E1908-0E5F-4B3B-B427-47105FE9A880}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Redis", "..\Caching\src\Caching.Redis\Caching.Redis.csproj", "{D0D67571-4130-4E42-866F-91F36806AB11}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeixinSDK.TokenService.Distributed", "src\WeixinSDK.TokenService.Distributed\WeixinSDK.TokenService.Distributed.csproj", "{A4E648D2-E806-4AA9-850F-702FE55C975E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{829A267D-2FEF-42D5-BFE8-A6E5846B76EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeixinSDK", "WeixinSDK", "{59E11A6E-F568-401B-9508-55537B902E13}"
+	ProjectSection(SolutionItems) = preProject
+		src\NuGet\WeixinSDK\WeixinSDK.nuspec = src\NuGet\WeixinSDK\WeixinSDK.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeixinSDK.Config", "WeixinSDK.Config", "{71FBBCFA-1473-4A40-B55D-C175F9BD2482}"
+	ProjectSection(SolutionItems) = preProject
+		src\NuGet\WeixinSDK.Config\WeixinSDK.Config.nuspec = src\NuGet\WeixinSDK.Config\WeixinSDK.Config.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeixinSDK.TokenService.Distributed", "WeixinSDK.TokenService.Distributed", "{21E65084-93AC-4D63-848C-F72D2839FF53}"
+	ProjectSection(SolutionItems) = preProject
+		src\NuGet\WeixinSDK.TokenService.Distributed\WeixinSDK.TokenService.Distributed.nuspec = src\NuGet\WeixinSDK.TokenService.Distributed\WeixinSDK.TokenService.Distributed.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +40,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C3DF461-2F2C-4AB9-912F-72DE259D311E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C3DF461-2F2C-4AB9-912F-72DE259D311E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C3DF461-2F2C-4AB9-912F-72DE259D311E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C3DF461-2F2C-4AB9-912F-72DE259D311E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8786051-5C80-49D3-A8AF-9711DA5CD49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8786051-5C80-49D3-A8AF-9711DA5CD49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8786051-5C80-49D3-A8AF-9711DA5CD49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8786051-5C80-49D3-A8AF-9711DA5CD49E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B57F3331-A875-40D2-8802-21104E28CC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B57F3331-A875-40D2-8802-21104E28CC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B57F3331-A875-40D2-8802-21104E28CC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B57F3331-A875-40D2-8802-21104E28CC32}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC7AF5F6-8D9F-46E6-BD49-3486426E4702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC7AF5F6-8D9F-46E6-BD49-3486426E4702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC7AF5F6-8D9F-46E6-BD49-3486426E4702}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,10 +56,6 @@ Global
 		{7B3E1908-0E5F-4B3B-B427-47105FE9A880}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B3E1908-0E5F-4B3B-B427-47105FE9A880}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B3E1908-0E5F-4B3B-B427-47105FE9A880}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0D67571-4130-4E42-866F-91F36806AB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0D67571-4130-4E42-866F-91F36806AB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0D67571-4130-4E42-866F-91F36806AB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0D67571-4130-4E42-866F-91F36806AB11}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A4E648D2-E806-4AA9-850F-702FE55C975E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A4E648D2-E806-4AA9-850F-702FE55C975E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4E648D2-E806-4AA9-850F-702FE55C975E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -74,14 +65,14 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6C3DF461-2F2C-4AB9-912F-72DE259D311E} = {F95D6B3C-FC04-42B4-B349-3DA82817B2AB}
-		{D8786051-5C80-49D3-A8AF-9711DA5CD49E} = {F95D6B3C-FC04-42B4-B349-3DA82817B2AB}
-		{B57F3331-A875-40D2-8802-21104E28CC32} = {F95D6B3C-FC04-42B4-B349-3DA82817B2AB}
 		{DC7AF5F6-8D9F-46E6-BD49-3486426E4702} = {671C7F43-BAEE-4792-BB39-4C39A60453A6}
 		{0F275020-6F2E-446C-A947-F05FF51075B1} = {C0AF58DC-D0B8-41DE-8B23-BD9F0CCBE9DC}
 		{BE4484A0-978C-4ABF-9744-7C95F4686A6E} = {671C7F43-BAEE-4792-BB39-4C39A60453A6}
 		{7B3E1908-0E5F-4B3B-B427-47105FE9A880} = {C0AF58DC-D0B8-41DE-8B23-BD9F0CCBE9DC}
-		{D0D67571-4130-4E42-866F-91F36806AB11} = {F95D6B3C-FC04-42B4-B349-3DA82817B2AB}
 		{A4E648D2-E806-4AA9-850F-702FE55C975E} = {671C7F43-BAEE-4792-BB39-4C39A60453A6}
+		{829A267D-2FEF-42D5-BFE8-A6E5846B76EC} = {671C7F43-BAEE-4792-BB39-4C39A60453A6}
+		{59E11A6E-F568-401B-9508-55537B902E13} = {829A267D-2FEF-42D5-BFE8-A6E5846B76EC}
+		{71FBBCFA-1473-4A40-B55D-C175F9BD2482} = {829A267D-2FEF-42D5-BFE8-A6E5846B76EC}
+		{21E65084-93AC-4D63-848C-F72D2839FF53} = {829A267D-2FEF-42D5-BFE8-A6E5846B76EC}
 	EndGlobalSection
 EndGlobal

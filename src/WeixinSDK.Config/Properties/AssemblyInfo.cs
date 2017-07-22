@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 #if DEBUG
-[assembly: AssemblyTitle("Wlitsoft.Framework.Common.Serializer.JsonNet 调试版")]
+[assembly: AssemblyTitle("Wlitsoft.Framework.WeixinSDK.Config 调试版")]
 #else
-[assembly: AssemblyTitle("Wlitsoft.Framework.Common.Serializer.JsonNet 发行版")]
+[assembly: AssemblyTitle("Wlitsoft.Framework.WeixinSDK.Config 发行版")]
 #endif
-[assembly: AssemblyDescription("Wlitsoft 框架 - 公共程序集 Json.Net 组件序列化者")]
+[assembly: AssemblyDescription("Wlitsoft 框架 - 微信公众平台开发工具包 - 配置")]
 [assembly: AssemblyCulture("")]
 
 //将 ComVisible 设置为 false 将使此程序集中的类型
