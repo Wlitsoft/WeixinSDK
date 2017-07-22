@@ -9,7 +9,7 @@ Wlitsoft 框架 - 微信公众号开发工具包
 -------- | :------------ |
 Wlitsoft.Framework.WeixinSDK | [![NuGet](https://img.shields.io/nuget/v/Wlitsoft.Framework.WeixinSDK.svg)](https://www.nuget.org/packages/Wlitsoft.Framework.WeixinSDK)
 Wlitsoft.Framework.WeixinSDK.Config | [![NuGet](https://img.shields.io/nuget/v/Wlitsoft.Framework.WeixinSDK.Config.svg)](https://www.nuget.org/packages/Wlitsoft.Framework.WeixinSDK.Config)
-Wlitsoft.Framework.TokenService.Distributed | [![NuGet](https://img.shields.io/nuget/v/Wlitsoft.Framework.TokenService.Distributed.svg)](https://www.nuget.org/packages/Wlitsoft.Framework.TokenService.Distributed)
+Wlitsoft.Framework.WeixinSDK.TokenService.Distributed | [![NuGet](https://img.shields.io/nuget/v/Wlitsoft.Framework.WeixinSDK.TokenService.Distributed.svg)](https://www.nuget.org/packages/Wlitsoft.Framework.WeixinSDK.TokenService.Distributed)
 
 ## 关于项目
 
