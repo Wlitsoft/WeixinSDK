@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Resources;
 
 [assembly: AssemblyCompany("Wlitsoft")]
-[assembly: AssemblyCopyright("Copyright Wlitsoft 2012 - 2016")]
+[assembly: AssemblyCopyright("Copyright Wlitsoft 2012 - 2017")]
 [assembly: AssemblyTrademark("Copyright © Copyright")]
 [assembly: AssemblyProduct("Wlitsoft 框架")]
 

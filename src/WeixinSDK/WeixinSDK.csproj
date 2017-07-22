@@ -62,7 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\common\globals\AuthorInfo.cs">
+    <Compile Include="..\..\Globals\AuthorInfo.cs">
       <Link>Globals\AuthorInfo.cs</Link>
     </Compile>
     <Compile Include="Api\BaseApi.cs" />
